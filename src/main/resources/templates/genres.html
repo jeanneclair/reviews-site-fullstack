@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Song Genres</title>
+</head>
+<body>
+	<h1>Song Genres</h1>
+
+	<ul>
+		<li th:each="genre : ${genres}">
+			<a th:href="|@{/genres/}${genre.id}|">
+				<span th:text="${genre.title}"></span>
+			</a>
+		</li>
+	</ul>
+	<a href="/reviews.html" th:href="@{/reviews}">Back to Reviews</a>
+
+</body>
+</html>

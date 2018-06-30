@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/src/css/reviews.css"/>
+
+	<title>Song Reviews</title>
+</head>
+<!-- <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Luckiest+Guy|Sigmar+One" rel="stylesheet"> -->
+<body>
+	<div class="container">
+		<header>
+			<div>
+			<h1>Song Reviews</h1>
+			<a id="genres-link" href="/genres.html" th:href="@{/genres}">Reviews by Genre</a>
+			</div>
+
+		</header>
+
+		<main>
+			<ol class="reviews">
+				<li th:each="review : ${reviews}">
+					<span id="songName" th:text="${review.songName}"></span>
+					<span id="bandName" th:text="' by ' + ${review.bandName}"></span>
+					<p><a th:href="|@{/reviews/}${review.id}|">Review</a></p>
+				</li>
+			</ol>
+		</main>
+	</div>
+</body>
+</html>

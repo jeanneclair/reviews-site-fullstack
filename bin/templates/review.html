@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title th:text="${review.songName}"></title>
+</head>
+<body>
+	<h1 th:text="${review.songName}"></h1>
+	<h2 th:text="${review.bandName}"></h2>
+
+	<a href="/reviews.html" th:href="@{/reviews}">Back to Reviews</a>
+
+	<div>
+	<!-- <img th:src="${review.imgUrl}" /> -->
+	<p th:text="'Genre: ' + ${review.genre}"></p>
+	<p th:text="${review.stars} + '/5 stars'"></p>
+	<p th:text="${review.songLyrics}"></p>
+
+
+
+
+	</div>
+
+	
+
+</body>
+</html>

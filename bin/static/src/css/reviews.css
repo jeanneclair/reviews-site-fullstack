@@ -1,0 +1,97 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#bandName {
+	font-size: 2vh;
+}
+
+.clearfix::after {
+	clear: both;
+	content: '';
+	display: block;
+}
+
+.container {
+	width: 90vw;
+	margin: auto;
+	background-color: #A3BF69;
+	padding-top: 3vh;
+}
+
+#genres-link {
+	padding-left: 10vw;
+	border-style: solid;
+	border-width: 1px;
+	font-family: sans-serif;
+
+}
+
+h1 {
+	padding-left: 5vw;
+	font-family: 'Luckiest Guy', 'Fugaz One', 'Sigmar One', serif;
+	font-size: 10vh;
+	border-style: solid;
+	border-width: 1px;
+	margin-top: 0;
+	/*line-height: 0.7em;*/
+}
+
+/*h2 h3 {
+	border-style: solid;
+	border-width: 1px;
+}*/
+
+/*h2 {
+	color: red;
+	border-style: solid;
+	border-width: 1px;
+}
+
+h3 {
+	color: blue;
+	border-style: solid;
+	border-width: 1px;
+}*/
+
+header {
+	height: 25vh;
+	background-color: #91E2C7;
+	position: fixed;
+	width: 90vw;
+	top: 0;
+}
+
+
+
+/*ul > li {
+	list-style-type: none;	
+}*/
+
+.reviews {
+	/*border-style: solid;
+	border-width: 1px;*/
+	margin-top: 25vh;
+	width: 100%;
+	padding-left: 10vw;
+	border-radius: 5px;
+	font-family: sans-serif;
+	padding-bottom: 5vh;
+}
+
+.reviews p {
+	padding-bottom: 5vh;
+}
+
+#songName {
+	font-size: 4vh;
+}
+
+
+
+/*ul {
+	margin: 0;
+    padding: 0;
+}*/

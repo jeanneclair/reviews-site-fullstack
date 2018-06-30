@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title th:text="${genre.title}"></title>
+</head>
+<body>
+	<h1 th:text="${genre.title}"></h1>
+
+	<ul>
+		<li th:each="review : ${genre.reviews}">
+			<p th:text="${review.songName}"></p>
+		</li>
+	</ul>
+	<a href="/reviews.html" th:href="@{/reviews}">Back to Reviews</a>
+
+	
+
+	
+
+</body>
+</html>
