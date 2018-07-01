@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="/src/css/genres.css"/>
+
 	<title>Song Genres</title>
 </head>
+<link href="https://fonts.googleapis.com/css?family=Fugaz+One|Luckiest+Guy|Sigmar+One" rel="stylesheet"/>
 <body>
-	<h1>Song Genres</h1>
+	<div class="container">
+		<header>
+			<h1>Song Genres</h1>
+			<a href="/reviews.html" th:href="@{/reviews}">Back to Reviews</a>
+		</header>
 
-	<ul>
-		<li th:each="genre : ${genres}">
-			<a th:href="|@{/genres/}${genre.id}|">
-				<span th:text="${genre.title}"></span>
-			</a>
-		</li>
-	</ul>
-	<a href="/reviews.html" th:href="@{/reviews}">Back to Reviews</a>
+		<main class="genres">
+			<ul>
+				<li th:each="genre : ${genres}">
+					<a th:href="|@{/genres/}${genre.id}|">
+						<span th:text="${genre.title}"></span>
+					</a>
+				</li>
+			</ul>
+		</main>
 
+		<footer>
+			<small>&copy;2018</small>
+		</footer>
+	</div>
 </body>
 </html>

@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 90vw;
+	margin: auto;
+	background-color: #A3BF69;
+	padding-top: 3vh;
+}
+
+.container a {
+	color: black;
+}
+
+footer {
+	text-align: center;
+}
+
+h1 h2 {
+	padding-left: 5vw;
+	font-size: 10vh;
+	border-style: solid;
+	border-width: 1px;
+	margin-top: 0;
+}
+
+h1 {
+	font-family: 'Luckiest Guy', 'Fugaz One', 'Sigmar One', serif;
+	font-size: 10vh;
+}
+
+h2 {
+	font-family: sans-serif;
+}
+
+h3 {
+	padding-top: 5vh;
+}
+
+header {
+	height: 27vh;
+	background-color: #91E2C7;
+	position: fixed;
+	width: 90vw;
+	top: 0;
+	padding-top: 5vh;
+	padding-left: 5vw;
+}
+
+header a {
+	font-family: sans-serif;
+}
+
+.review {
+	margin-top: 27vh;
+	width: 100%;
+	padding-left: 10vw;
+	border-radius: 5px;
+	font-family: sans-serif;
+	padding-bottom: 5vh;
+}
+
+#songLyrics {
+	padding-top: 5vh;
+	content: 'A\A';
+	white-space: pre;
+}

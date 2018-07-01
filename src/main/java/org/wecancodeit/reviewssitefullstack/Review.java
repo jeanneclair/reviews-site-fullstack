@@ -17,6 +17,7 @@ public class Review {
 	@Lob
 	private String songLyrics;
 	private String imageUrl;
+	private String youtube;
 	private int stars;
 	
 	public Review() {
@@ -27,12 +28,13 @@ public class Review {
 	private Genre genre;
 
 
-	public Review(String songName, String bandName, String songLyrics, String imageUrl, Genre genre, int stars) {
+	public Review(String songName, String bandName, String songLyrics, String imageUrl, Genre genre, String youtube, int stars) {
 		super();
 		this.songName = songName;
 		this.bandName = bandName;
 		this.songLyrics = songLyrics;
 		this.imageUrl = imageUrl;
+		this.youtube = youtube;
 		this.stars = stars;
 		this.genre = genre;
 	}
@@ -61,6 +63,11 @@ public class Review {
 	public String getImageUrl() {
 		return imageUrl;
 	}
+	
+
+	public String getYoutube() {
+		return youtube;
+	}
 
 
 	public int getStars() {
@@ -75,9 +82,12 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "Review [songName=" + songName + ", bandName=" + bandName + ", songLyrics=" + songLyrics + ", imageUrl="
-				+ imageUrl + ", stars=" + stars + ", genre=" + genre + "]";
+		return "Review [id=" + id + ", songName=" + songName + ", bandName=" + bandName + ", songLyrics=" + songLyrics
+				+ ", imageUrl=" + imageUrl + ", youtube=" + youtube + ", stars=" + stars + ", genre=" + genre + "]";
 	}
+
+
+	
 
 	
 }

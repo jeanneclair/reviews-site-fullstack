@@ -8,12 +8,6 @@
 	font-size: 2vh;
 }
 
-.clearfix::after {
-	clear: both;
-	content: '';
-	display: block;
-}
-
 .container {
 	width: 90vw;
 	margin: auto;
@@ -21,59 +15,53 @@
 	padding-top: 3vh;
 }
 
-#genres-link {
-	padding-left: 10vw;
-	border-style: solid;
-	border-width: 1px;
-	font-family: sans-serif;
+.container a {
+	color: black;
+}
 
+#genres-link {
+	padding-left: 5vw;
+	font-family: sans-serif;
+	color: black;
+}
+
+footer {
+	text-align: center;
 }
 
 h1 {
 	padding-left: 5vw;
 	font-family: 'Luckiest Guy', 'Fugaz One', 'Sigmar One', serif;
 	font-size: 10vh;
-	border-style: solid;
-	border-width: 1px;
 	margin-top: 0;
-	/*line-height: 0.7em;*/
 }
-
-/*h2 h3 {
-	border-style: solid;
-	border-width: 1px;
-}*/
-
-/*h2 {
-	color: red;
-	border-style: solid;
-	border-width: 1px;
-}
-
-h3 {
-	color: blue;
-	border-style: solid;
-	border-width: 1px;
-}*/
 
 header {
-	height: 25vh;
+	height: 35vh;
 	background-color: #91E2C7;
 	position: fixed;
 	width: 90vw;
 	top: 0;
+	padding-top: 5vh;
 }
 
+.pickSong {
+	padding-top: 2vh;
+	padding-left: 5vw;
+	font-family: sans-serif;
 
+}
 
-/*ul > li {
-	list-style-type: none;	
-}*/
+.pickSong button {
+	background-color: #A3BF69;
+	border: none;
+	padding: 1vh;
+	font-family: sans-serif;
+	margin-bottom: 2vh;
+}
 
 .reviews {
-	/*border-style: solid;
-	border-width: 1px;*/
-	margin-top: 25vh;
+	margin-top: 35vh;
 	width: 100%;
 	padding-left: 10vw;
 	border-radius: 5px;
@@ -81,17 +69,23 @@ header {
 	padding-bottom: 5vh;
 }
 
+.reviews a {
+	color: black;
+}
+
+.reviews img {
+	width: 100px;
+	padding-top: 3vh;
+}
+
 .reviews p {
-	padding-bottom: 5vh;
+	padding-bottom: 3vh;
 }
 
 #songName {
-	font-size: 4vh;
+	font-size: 3vh;
 }
 
-
-
-/*ul {
-	margin: 0;
-    padding: 0;
-}*/
+#songDisplay button {
+	z-index: 1;
+}

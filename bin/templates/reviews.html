@@ -2,18 +2,19 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="/src/css/reviews.css"/>
-
 	<title>Song Reviews</title>
 </head>
-<!-- <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Luckiest+Guy|Sigmar+One" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Fugaz+One|Luckiest+Guy|Sigmar+One" rel="stylesheet"/>
 <body>
 	<div class="container">
 		<header>
-			<div>
-			<h1>Song Reviews</h1>
-			<a id="genres-link" href="/genres.html" th:href="@{/genres}">Reviews by Genre</a>
+			<h1>Song Reviews and Lyrics</h1>
+			<a id="genres-link" href="/genres.html" th:href="@{/genres}">by Genre</a>
+			<div class="pickSong">
+				<button onclick="newSong()">Pick a song</button>
+				<div id="songDisplay">
+				</div>
 			</div>
-
 		</header>
 
 		<main>
@@ -21,10 +22,17 @@
 				<li th:each="review : ${reviews}">
 					<span id="songName" th:text="${review.songName}"></span>
 					<span id="bandName" th:text="' by ' + ${review.bandName}"></span>
-					<p><a th:href="|@{/reviews/}${review.id}|">Review</a></p>
+					<figure>
+						<p><a th:href="|@{/reviews/}${review.id}|"><img th:src="${review.imageUrl}" /></a></p>
+					</figure>
+					<p><a th:href="|@{/reviews/}${review.id}|">Video and Lyrics</a></p>
 				</li>
 			</ol>
 		</main>
+		<footer>
+			<small>&copy;2018</small>
+		</footer>
 	</div>
+<script src="/src/js/app.js"></script>
 </body>
 </html>

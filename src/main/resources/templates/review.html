@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="/src/css/review.css"/>
 
 	<title th:text="${review.songName}"></title>
 </head>
+<link href="https://fonts.googleapis.com/css?family=Fugaz+One|Luckiest+Guy|Sigmar+One" rel="stylesheet"/>
 <body>
-	<h1 th:text="${review.songName}"></h1>
-	<h2 th:text="${review.bandName}"></h2>
+	<div class="container">
+		<header>
+			<h1 th:text="${review.songName}"></h1>
+			<h2 th:text="${review.bandName}"></h2>
+			<a href="/reviews.html" th:href="@{/reviews}">Back to Reviews</a>
+		</header>
 
-	<a href="/reviews.html" th:href="@{/reviews}">Back to Reviews</a>
+		<main class="review">
+			<section>
+				<p th:utext="${review.youtube}"></p>
+				<p th:text="'Genre: ' + ${review.genre}"></p>
+				<p th:text="${review.stars} + '/5 stars'"></p>
+			<h3>Lyrics</h3>
+				<p id="songLyrics" th:text="${review.songLyrics}"></p>
+			</section>
+		</main>
 
-	<div>
-	<!-- <img th:src="${review.imgUrl}" /> -->
-	<p th:text="'Genre: ' + ${review.genre}"></p>
-	<p th:text="${review.stars} + '/5 stars'"></p>
-	<p th:text="${review.songLyrics}"></p>
-
-
-
-
+		<footer>
+			<small>&copy;2018</small>
+		</footer>
 	</div>
-
-	
-
 </body>
 </html>
