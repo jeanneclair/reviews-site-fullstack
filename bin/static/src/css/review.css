@@ -17,6 +17,7 @@
 
 footer {
 	text-align: center;
+	background-color: #91E2C7;
 }
 
 h1 h2 {
@@ -37,7 +38,8 @@ h2 {
 }
 
 h3 {
-	padding-top: 5vh;
+	padding-top: 1vh;
+	text-decoration: underline double;
 }
 
 header {
@@ -64,7 +66,7 @@ header a {
 }
 
 #songLyrics {
-	padding-top: 5vh;
+	padding-top: 1vh;
 	content: 'A\A';
 	white-space: pre;
 }

@@ -8,7 +8,7 @@
 <body>
 	<div class="container">
 		<header>
-			<h1>Song Reviews and Lyrics</h1>
+			<h1>Song Reviews, Videos, &amp; Lyrics</h1>
 			<a id="genres-link" href="/genres.html" th:href="@{/genres}">by Genre</a>
 			<div class="pickSong">
 				<button onclick="newSong()">Pick a song</button>
@@ -25,7 +25,7 @@
 					<figure>
 						<p><a th:href="|@{/reviews/}${review.id}|"><img th:src="${review.imageUrl}" /></a></p>
 					</figure>
-					<p><a th:href="|@{/reviews/}${review.id}|">Video and Lyrics</a></p>
+					<p><a th:href="|@{/reviews/}${review.id}|">Video &amp; Lyrics</a></p>
 				</li>
 			</ol>
 		</main>

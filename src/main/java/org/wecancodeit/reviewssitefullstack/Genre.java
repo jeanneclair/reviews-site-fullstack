@@ -17,7 +17,7 @@ public class Genre {
 	private String title;
 	
 	@OneToMany(mappedBy = "genre")
-	protected Collection<Review> reviews;
+	private Collection<Review> reviews;
 
 	public Genre(String title) {
 		this.title = title;
