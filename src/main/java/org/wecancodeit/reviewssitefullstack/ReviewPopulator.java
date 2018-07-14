@@ -14,6 +14,12 @@ public class ReviewPopulator implements CommandLineRunner {
 	@Resource
 	private ReviewRepository reviewRepo;
 	
+	@Resource
+	private TagRepository tagRepo;
+	
+//	@Resource
+//	private CommentRepository commentRepo;
+	
 	public ReviewPopulator() {
 		
 	}
@@ -398,6 +404,11 @@ public class ReviewPopulator implements CommandLineRunner {
 				"I'm in love with the world through the eyes of a girl\r\n" + 
 				"Who's still around the morning after", "/src/images/10.jpg", genre5, "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/8bxmk09lCzk\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>", 4));
 
+		Tag british = tagRepo.save(new Tag("british", review1, review3, review4, review8, review9));
+		Tag american = tagRepo.save(new Tag("american", review2, review5, review6, review7, review10));
+		Tag male = tagRepo.save(new Tag("male", review1, review3, review4, review5, review6, review7, review8, review9, review10));
+		Tag female = tagRepo.save(new Tag("female", review2, review9));
 	}
+	
 
 }

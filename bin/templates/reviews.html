@@ -9,7 +9,8 @@
 	<div class="container">
 		<header>
 			<h1>Song Reviews, Videos, &amp; Lyrics</h1>
-			<a id="genres-link" href="/genres.html" th:href="@{/genres}">by Genre</a>
+				<a id="genres-link" th:href="@{/genres}"><p>by Genre</p></a>
+				<a id="tags-link" th:href="@{/tags}"><p>by Tag</p></a>
 			<div class="pickSong">
 				<button onclick="newSong()">Pick a song</button>
 				<div id="songDisplay">
@@ -28,6 +29,8 @@
 					<p><a th:href="|@{/reviews/}${review.id}|">Video &amp; Lyrics</a></p>
 				</li>
 			</ol>
+
+
 		</main>
 		<footer>
 			<small>&copy;2018</small>

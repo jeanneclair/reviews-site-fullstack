@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/src/css/tag.css"/>
+
+	<title th:text="${tag.name}"></title>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Fugaz+One|Luckiest+Guy|Sigmar+One" rel="stylesheet"/>
+<body>
+	<div class="container">
+		<header>
+			<h1 th:text="${tag.name}"></h1>
+            <a href="/tags.html" th:href="@{/tags}"><p>All Tags</p></a>
+            <a href="/reviews.html" th:href="@{/reviews}"><p>Back to Reviews</p></a>
+
+		</header>
+
+		<main class="tag">
+			<ul>
+				<li th:each="review : ${tag.reviews}">
+					<a th:href="|@{/reviews/}${review.id}|">
+					<p th:text="${review.songName} + ' by ' + ${review.bandName}"></p>
+					</a>
+				</li>
+			</ul>
+		</main>
+
+		<footer>
+			<small>&copy;2018</small>
+		</footer>
+	</div>
+</body>
+</html>

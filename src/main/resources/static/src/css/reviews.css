@@ -19,11 +19,6 @@
 	color: black;
 }
 
-#genres-link {
-	padding-left: 5vw;
-	font-family: sans-serif;
-	color: black;
-}
 
 footer {
 	text-align: center;
@@ -44,6 +39,12 @@ header {
 	width: 90vw;
 	top: 0;
 	padding-top: 5vh;
+}
+
+header  a p {
+	font-family: sans-serif;
+	color: black;
+	padding-left: 5vw;
 }
 
 .pickSong {

@@ -1,9 +1,16 @@
 package org.wecancodeit.reviewssitefullstack;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -20,15 +27,19 @@ public class Review {
 	private String youtube;
 	private int stars;
 	
-	public Review() {
-		
-	}
 	
 	@ManyToOne
 	private Genre genre;
+	
+	@ManyToMany(mappedBy = "reviews")
+	private Collection<Tag> tags;
+	
+	@ElementCollection
+	@Embedded 
+	private Collection<Comment> comments;
 
 
-	public Review(String songName, String bandName, String songLyrics, String imageUrl, Genre genre, String youtube, int stars) {
+	public Review(String songName, String bandName, String songLyrics, String imageUrl, Genre genre, String youtube, int stars, Comment...comments) {
 		super();
 		this.songName = songName;
 		this.bandName = bandName;
@@ -37,8 +48,12 @@ public class Review {
 		this.youtube = youtube;
 		this.stars = stars;
 		this.genre = genre;
+		this.comments = Arrays.asList(comments);
 	}
 
+	public Review() {
+		
+	}
 
 	public Long getId() {
 		return id;
@@ -78,17 +93,28 @@ public class Review {
 	public Genre getGenre() {
 		return genre;
 	}
+	
 
+	public Collection<Tag> getTags() {
+		return tags;
+	}
+	
+	public void addComment(Comment comment) {
+		
+		comments.add(comment);
+	}
+	
+	
+	public Collection<Comment> getComments() {
+		return comments;
+	}
 
 	@Override
 	public String toString() {
 		return "Review [id=" + id + ", songName=" + songName + ", bandName=" + bandName + ", songLyrics=" + songLyrics
-				+ ", imageUrl=" + imageUrl + ", youtube=" + youtube + ", stars=" + stars + ", genre=" + genre + "]";
+				+ ", imageUrl=" + imageUrl + ", youtube=" + youtube + ", stars=" + stars + ", genre=" + genre
+				+ ", tags=" + tags + "]";
 	}
-
-
-	
-
 	
 }
 	

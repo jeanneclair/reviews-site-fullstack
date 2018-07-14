@@ -4,10 +4,6 @@
 	padding: 0;
 }
 
-#bandName {
-	font-size: 2vh;
-}
-
 .container {
 	width: 90vw;
 	margin: auto;
@@ -19,75 +15,36 @@
 	color: black;
 }
 
-
 footer {
 	text-align: center;
 	background-color: #91E2C7;
 }
 
 h1 {
-	padding-left: 5vw;
 	font-family: 'Luckiest Guy', 'Fugaz One', 'Sigmar One', serif;
 	font-size: 10vh;
 	margin-top: 0;
 }
 
 header {
-	height: 35vh;
+	height: 25vh;
 	background-color: #91E2C7;
 	position: fixed;
 	width: 90vw;
 	top: 0;
 	padding-top: 5vh;
-}
-
-header  a p {
-	font-family: sans-serif;
-	color: black;
 	padding-left: 5vw;
 }
 
-.pickSong {
-	padding-top: 2vh;
-	padding-left: 5vw;
+header a p {
 	font-family: sans-serif;
-
 }
 
-.pickSong button {
-	background-color: #A3BF69;
-	border: none;
-	padding: 1vh;
-	font-family: sans-serif;
-	margin-bottom: 2vh;
-}
-
-.reviews {
-	margin-top: 35vh;
+.tag {
+	margin-top: 25vh;
 	width: 100%;
 	padding-left: 10vw;
 	border-radius: 5px;
 	font-family: sans-serif;
 	padding-bottom: 5vh;
-}
-
-.reviews a {
-	color: black;
-}
-
-.reviews img {
-	width: 100px;
-	padding-top: 3vh;
-}
-
-.reviews p {
-	padding-bottom: 3vh;
-}
-
-#songName {
-	font-size: 3vh;
-}
-
-#songDisplay button {
-	z-index: 1;
 }
