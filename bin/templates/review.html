@@ -15,6 +15,7 @@
 		</header>
 
 		<main class="review">
+				<span id="reviewId" th:text="${review.id}" style="display:none"></span>
 			<section>
 				<p th:utext="${review.youtube}"></p>
 				<p th:text="'Genre: ' + ${review.genre}"></p>
@@ -26,7 +27,7 @@
 						<span><button class="delete">Remove</button></span>
 					</li>
 				</ul>	
-				<form th:action="|@{/tags/}|" method="POST"> 
+				<form th:action="|@{/tags}|" method="POST"> 
 					<label><input type="text" name="tagText" /></label>
 					<label><input type="hidden" name="reviewId" th:value="${review.id}" /></label>	
 					<input class="input" type="submit" value="Add Tag" />			

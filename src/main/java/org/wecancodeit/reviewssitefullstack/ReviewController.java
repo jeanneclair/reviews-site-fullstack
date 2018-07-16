@@ -64,27 +64,22 @@ public class ReviewController {
 	}
 
 	@RequestMapping(value = "/tags", method = RequestMethod.POST)
-	public String addTag(String tagText, @RequestParam(name = "reviewId") String reviewId) {
+	public String addTag(String tagText, @RequestParam(value = "reviewId") String reviewId) {
 
 		if (tagRepo.findByName(tagText) == null) {
 
 			Review formReviewId = reviewRepo.findOne(Long.parseLong(reviewId));
 			tagRepo.save(new Tag(tagText, formReviewId));
-			return "redirect:/reviews/" + reviewId;
-		} 
-		
+			System.out.println(formReviewId);
+			
+		} else {
+			
+			tagRepo.findByName(tagText).addReview(reviewRepo.findOne(Long.parseLong(reviewId)));
+			System.out.println(reviewId);
+		}
+				
 		return "redirect:/reviews/" + reviewId;
 		
-//		if (tagRepo.findByName(tagText).getReviews() == reviewRepo.findOne(Long.parseLong(reviewId)))   {
-//			
-//			Review formReviewId = reviewRepo.findOne(Long.parseLong(reviewId));
-//			tagRepo.save(new Tag(tagText, formReviewId));
-//			return "redirect:/reviews/" + reviewId;
-//			
-//		} else {
-//
-//			return "redirect:/reviews/" + reviewId;
-//		}
 
 	}
 

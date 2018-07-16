@@ -21,7 +21,8 @@ function removeTag(event) {
 
 	if (event.target.classList.contains('delete')) {
 
-		const reviewId = document.getElementById("reviewId").innerHTML;
+		const reviewId = document.getElementById("reviewId").innerText;
+		console.log(reviewId);
 		const deleteButton = event.target;
 		const cityContainer = deleteButton.parentElement.parentElement;
 		const hrefArray = cityContainer.querySelector('a').getAttribute('href').split("/");

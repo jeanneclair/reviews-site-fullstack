@@ -42,6 +42,11 @@ public class Tag {
 	public Collection<Review> getReviews() {
 		return reviews;
 	}
+	
+	public void addReview(Review review) {
+	
+		reviews.add(review);
+	}
 
 	@Override
 	public String toString() {

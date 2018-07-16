@@ -21,16 +21,16 @@ function removeTag(event) {
 
 	if (event.target.classList.contains('delete')) {
 
+		const reviewId = document.getElementById("reviewId").innerText;
+		console.log(reviewId);
 		const deleteButton = event.target;
 		const cityContainer = deleteButton.parentElement.parentElement;
 		const hrefArray = cityContainer.querySelector('a').getAttribute('href').split("/");
 		const tagId = hrefArray[2];
-		console.log({tagId});
 		const xhr = new XMLHttpRequest()
 		xhr.onreadystatechange = function(response) {
 			if(xhr.readyState == 4 && xhr.status == 200) {
 				const remainingTags = JSON.parse(response.currentTarget.response);
-				console.log({remainingTags});
 				let list = ''
 				remainingTags.forEach(function(tag) {
 
@@ -47,7 +47,7 @@ function removeTag(event) {
 
 			}
 		}
-		xhr.open("DELETE", `/api/tags/${tagId}`, true)
+		xhr.open("DELETE", `/api/tags/${tagId}/${reviewId}`, true)
 		xhr.send()
 
 	}

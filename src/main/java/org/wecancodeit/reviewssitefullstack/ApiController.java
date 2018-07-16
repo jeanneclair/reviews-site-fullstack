@@ -26,12 +26,10 @@ public class ApiController {
 	@RequestMapping(value = "/tags/{id}/{reviewId}", method = RequestMethod.DELETE)
 	public Collection<Tag> deleteTag(@PathVariable(name = "id") Long id, @PathVariable(name = "reviewId") Long reviewId) {
 		
-		//Was working with Aaron on this part, but ran out of time. Was deleting before... but had issues
-		//with it deleting all tags, and needing to refresh to show the undeleted tags. Will finish this later.
+	
 		reviewRepo.findOne(reviewId);
 		tagRepo.delete(id);
-//		return (Collection<Tag>) tagRepo.findAll();
-		return tagRepo.findById(reviewId);
+		return (Collection<Tag>) reviewRepo.findOne(reviewId).getTags();
 	
 	}
 }

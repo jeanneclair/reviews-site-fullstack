@@ -101,6 +101,10 @@ public class Review {
 		comments.add(comment);
 	}
 	
+	public void addTag (Tag tag) {
+		tags.add(tag);
+	}
+	
 	
 	public Collection<Comment> getComments() {
 		return comments;
