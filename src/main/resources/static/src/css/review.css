@@ -56,6 +56,10 @@ header a {
 	font-family: sans-serif;
 }
 
+.input {
+	margin-top: 2vh;
+}
+
 .review {
 	margin-top: 27vh;
 	width: 100%;

@@ -1,17 +1,15 @@
 package org.wecancodeit.reviewssitefullstack;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Review {
@@ -34,8 +32,7 @@ public class Review {
 	@ManyToMany(mappedBy = "reviews")
 	private Collection<Tag> tags;
 	
-	@ElementCollection
-	@Embedded 
+	@OneToMany(mappedBy = "review")
 	private Collection<Comment> comments;
 
 

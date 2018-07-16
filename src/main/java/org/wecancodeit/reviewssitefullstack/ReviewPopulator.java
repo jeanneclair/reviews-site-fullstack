@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class ReviewPopulator implements CommandLineRunner {
 	
 	@Resource
@@ -17,8 +17,8 @@ public class ReviewPopulator implements CommandLineRunner {
 	@Resource
 	private TagRepository tagRepo;
 	
-//	@Resource
-//	private CommentRepository commentRepo;
+	@Resource
+	private CommentRepository commentRepo;
 	
 	public ReviewPopulator() {
 		

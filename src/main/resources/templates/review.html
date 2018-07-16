@@ -15,30 +15,32 @@
 		</header>
 
 		<main class="review">
+				<span id="reviewId" th:text="${review.id}" style="display:none"></span>
 			<section>
 				<p th:utext="${review.youtube}"></p>
 				<p th:text="'Genre: ' + ${review.genre}"></p>
 				<p th:text="${review.stars} + '/5 stars'"></p>
 			<h3>Tags</h3>
-				<ul class="tags">
+				<ul class="tagList">
 					<li th:each="tag : ${review.tags}">	
-						<a th:href="|@{/tags/}${tag.id}|"><p id="tagName" th:text="${tag.name}"></p></a>
+						<a th:href="|@{/tags/}${tag.id}|"><span id="tagName" th:text="${tag.name}"></span></a>
+						<span><button class="delete">Remove</button></span>
 					</li>
 				</ul>	
 				<form th:action="|@{/tags/}|" method="POST"> 
-					<label>Add Tag: <input type="text" name="tagText" /></label>
+					<label><input type="text" name="tagText" /></label>
 					<label><input type="hidden" name="reviewId" th:value="${review.id}" /></label>	
-					<input type="submit" value="Submit" />			
+					<input class="input" type="submit" value="Add Tag" />			
 				</form>
 			<h3>Comments</h3>
-				<ul class="comments">
-					<li th:each="review : ${reviews}">
-						<p th:text="${review.comments}"></p>
+				<ul class="commentList">
+					<li th:each="comment : ${review.comments}">
+						<p th:text="${comment.text}"></p>						
 					</li>
 				</ul>
 				<form th:action="|@{/reviews/}${review.id}|" method="POST">
-				<label>Add Comment: <input type="text" name="commentText" /></label>
-				<input type="submit" value="Submit" />
+				<label><input type="text" name="commentText" /></label>
+				<input class="input" type="submit" value="Add Comment" />
 				</form>
 
 			<h3>Lyrics</h3>
@@ -49,5 +51,6 @@
 			<small>&copy;2018</small>
 		</footer>
 	</div>
+<script src="/src/js/app.js"></script>
 </body>
 </html>

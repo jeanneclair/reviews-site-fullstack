@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Tag {
 	
@@ -16,7 +18,8 @@ public class Tag {
 	private Long id;
 	private String name;
 	
-	@ManyToMany // (mappedBy = "tags")
+	@JsonIgnore
+	@ManyToMany 
 	private Collection<Review> reviews;
 	
 	public Tag(String name, Review...reviews) {
@@ -44,11 +47,5 @@ public class Tag {
 	public String toString() {
 		return "Tag [name=" + name + ", reviews=" + reviews + "]";
 	}
-
-//	public Collection<Review> findByReview(long parseLong) {
-//
-//		return reviews;
-//	}
-	
 	
 }

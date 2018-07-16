@@ -19,6 +19,9 @@ public class ReviewController {
 
 	@Autowired
 	TagRepository tagRepo;
+	
+	@Autowired
+	CommentRepository commentRepo;
 
 	@RequestMapping("/genres")
 	public String getGenres(Model model) {
@@ -68,17 +71,27 @@ public class ReviewController {
 			Review formReviewId = reviewRepo.findOne(Long.parseLong(reviewId));
 			tagRepo.save(new Tag(tagText, formReviewId));
 			return "redirect:/reviews/" + reviewId;
-
-		} else {
-
-			return "redirect:/reviews/" + reviewId;
-		}
+		} 
+		
+		return "redirect:/reviews/" + reviewId;
+		
+//		if (tagRepo.findByName(tagText).getReviews() == reviewRepo.findOne(Long.parseLong(reviewId)))   {
+//			
+//			Review formReviewId = reviewRepo.findOne(Long.parseLong(reviewId));
+//			tagRepo.save(new Tag(tagText, formReviewId));
+//			return "redirect:/reviews/" + reviewId;
+//			
+//		} else {
+//
+//			return "redirect:/reviews/" + reviewId;
+//		}
 
 	}
 
 	@RequestMapping(value = "/reviews/{id}", method = RequestMethod.POST)
-	public String addComment(@PathVariable(name = "id") String commentText) {
+	public String addComment(@PathVariable(name = "id") Long id, String commentText) {
 
+		commentRepo.save(new Comment(commentText, reviewRepo.findOne(id)));
 		return "redirect:/reviews/{id}";
 	}
 
